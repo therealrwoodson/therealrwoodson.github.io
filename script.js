@@ -38,7 +38,7 @@ function whatTime(){
     var x = getRandomInt($mothers);
   }  while ($result.includes($mothers[x]));
   
-  $url='https://api.datamuse.com/words?rel_syn=mothers';
+  $url='https://api.datamuse.com/words?rel_syn=' + $mothers[x];
   timesRequest.open("GET", $url);
   timesRequest.responseType = 'json';
   timesRequest.send();
