@@ -1,0 +1,113 @@
+.forms, .outputs {
+  float: left;
+  font-family: sans-serif;
+}
+
+#container {
+    width: 1053px;
+    margin: 40px auto 0 auto;
+}
+
+#leftcol {
+    width: 404px;
+    display: inline-block;
+}
+
+#rightcol {
+    display: inline-block;
+    margin-left: 15px;
+    width: 404px;
+}
+
+.forms {
+  width: 200px;
+}
+
+.outputs {
+  margin-left:25px;
+}
+
+.infoin {
+  margin-top: 10px;
+  width:200px;
+}
+.output {
+  margin-bottom: 10px;
+  width:300px;
+}
+
+.btn {
+    margin-bottom: 10px;
+    border-style: none;
+    border-radius: 2em;
+    height: 30px;
+    color: white;
+    letter-spacing: .05em;
+    font-size: .8em;
+    font-weight: 200;
+    font-family: sans-serif;
+    background-color: #467E91;
+}
+
+.btn.aux {
+  width: 24.25%;
+}
+
+.btn.start,.btn.end {
+  width: 208px !important;
+}
+
+.btn.start {
+  background-color: #0b7763 !important;
+}
+
+.btn.end {
+  background-color: #ca4760 !important;
+}
+
+.outfield {
+  width: 400px;
+}
+
+html {
+  background: #BACFE4;
+}
+
+input.infoin {
+    border-style: none;
+    border-radius: .25em;
+    background: #f1f8ff;
+    height: 25px;
+}
+
+textarea.outfield {
+  margin-top: 10px;  
+  border-style: none;
+    border-radius: .25em;
+    background: #f1f8ff;
+    height: 25px;
+}
+
+.outfield.tall {
+  height: 100px;
+}
+
+a {
+    color: #185e6f;
+    font-weight: bold;
+}
+
+h2 {
+  text-align: center; font-family:sans-serif;
+  margin-bottom: 0;
+}
+
+h3 {
+  text-align: center; font-family:sans-serif; font-weight: 200; font-style:italic; margin-bottom:35px;
+  margin-top: 10px;
+}
+
+#id_sites {
+  width: 100%;
+  margin: 0 0 1em 0;
+}
