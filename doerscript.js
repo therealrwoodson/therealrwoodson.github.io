@@ -15,6 +15,8 @@ function pubName() {
 }
 
 function makeItWork() {
+ 
+  
   $clientName = document.pub.clientname.value;
   $ssts = document.pub.ssts.value;
   $promoBrief = document.pub.promobrief.value;
@@ -24,15 +26,53 @@ function makeItWork() {
   $bitUrl = document.pub.biturl.value;
   $imgUrl = document.pub.imgpath.value;
   $socialHead = document.pub.socialhead.value;
-
   
-  makeFb($finalUrl);
+  if (!document.pub.isdrafturl.checked && !document.pub.isfinalurl.checked && !document.pub.ismeta.checked && !document.pub.isstyle.checked && !document.pub.isfb.checked && !document.pub.istw.checked && !document.pub.ismail.checked) {
+    console.log('NOTHING');
+    makeFb($finalUrl);
   makeTw($socialCopy, $bitUrl, $clientName);
   makeEmail($socialHead, $socialCopy, $bitUrl, $clientName);
   //makeLi();
   makeStyleCode($imgUrl, $socialHead, $socialCopy);
   makeMeta($ssts, $imgUrl, $socialCopy);
-  makeUrls($ssts, $shortHead, '01');
+  makeDraftUrl($ssts, $shortHead);
+    makeFinalUrl($ssts, $shortHead);
+  } else {
+    
+    if (document.pub.isdrafturl.checked) {
+    makeDraftUrl($ssts, $shortHead);
+  }
+  if (document.pub.isfinalurl.checked) {
+    makeFinalUrl($ssts, $shortHead);
+  }
+  if (document.pub.ismeta.checked) {
+     makeMeta($ssts, $imgUrl, $socialCopy);
+  }
+  if (document.pub.isstyle.checked) {
+    makeStyleCode($imgUrl, $socialHead, $socialCopy);
+  }
+  if (document.pub.isfb.checked) {
+    makeFb($finalUrl);
+  }
+  if (document.pub.istw.checked) {
+    makeTw($socialCopy, $bitUrl, $clientName);
+  }
+  if (document.pub.ismail.checked) {
+    makeEmail($socialHead, $socialCopy, $bitUrl, $clientName);
+  }
+  };
+
+  
+  
+  
+   
+  
+  
+  
+  //makeLi();
+  
+ 
+  
 }
 
 function countChar(val) {
@@ -57,10 +97,14 @@ function amperoctoplus(s) {
 	return s;
 }
 
-function makeUrls(s,h,n) {
+function makeDraftUrl(s,h) {
   var $tempH = h.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s/g, '-');
   
     document.getElementsByName('drafturlout')[0].value = 'https://www.' + pubName() + '/pages/interactives/sponsor-story/' + s + '/' + $tempH + '-01/'; 
+}
+
+function makeFinalUrl(s,h) {
+  var $tempH = h.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s/g, '-');
   
   document.getElementsByName('finalurlout')[0].value = 'https://www.' + pubName() + '/pages/interactives/sponsor-story/' + s + '/' + $tempH + '/';
 }
