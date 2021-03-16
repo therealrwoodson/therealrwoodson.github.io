@@ -28,7 +28,6 @@ function makeItWork() {
   $socialHead = document.pub.socialhead.value;
   
   if (!document.pub.isdrafturl.checked && !document.pub.isfinalurl.checked && !document.pub.ismeta.checked && !document.pub.isstyle.checked && !document.pub.isfb.checked && !document.pub.istw.checked && !document.pub.ismail.checked) {
-    console.log('NOTHING');
     makeFb($finalUrl);
   makeTw($socialCopy, $bitUrl, $clientName);
   makeEmail($socialHead, $socialCopy, $bitUrl, $clientName);
