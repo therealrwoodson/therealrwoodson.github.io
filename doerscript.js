@@ -6,7 +6,7 @@ var $socialCopy;
 var $finalUrl;
 var $bitUrl;
 var $imgPath;
-var $draftNum;
+var $socialHead;
 
 function pubName() {
   var sel = document.getElementById('id_sites');
@@ -23,16 +23,16 @@ function makeItWork() {
   $finalUrl = document.pub.finalurl.value;
   $bitUrl = document.pub.biturl.value;
   $imgUrl = document.pub.imgpath.value;
-  $draftNum = document.pub.draft.value;
+  $socialHead = document.pub.socialhead.value;
 
   
   makeFb($finalUrl);
   makeTw($socialCopy, $bitUrl, $clientName);
-  makeEmail($shortHead, $socialCopy, $bitUrl, $clientName);
+  makeEmail($socialHead, $socialCopy, $bitUrl, $clientName);
   //makeLi();
-  makeStyleCode($imgUrl, $shortHead, $socialCopy);
+  makeStyleCode($imgUrl, $socialHead, $socialCopy);
   makeMeta($ssts, $imgUrl, $socialCopy);
-  makeUrls($ssts, $shortHead, $draftNum);
+  makeUrls($ssts, $shortHead, '01');
 }
 
 function countChar(val) {
@@ -59,17 +59,9 @@ function amperoctoplus(s) {
 
 function makeUrls(s,h,n) {
   var $tempH = h.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s/g, '-');
-  var $tempN;
-  if (n > 0) {
-     if (n<10) {
-        $tempN = '0' + n;
-     } else {
-        $tempN = n;
-     }
-    document.getElementsByName('drafturlout')[0].value = 'https://www.' + pubName() + '/pages/interactives/sponsor-story/' + s + '/' + $tempH + '-' + $tempN + '/'; 
-  } else {
-    document.getElementsByName('drafturlout')[0].value = '';
-  }
+  
+    document.getElementsByName('drafturlout')[0].value = 'https://www.' + pubName() + '/pages/interactives/sponsor-story/' + s + '/' + $tempH + '-01/'; 
+  
   document.getElementsByName('finalurlout')[0].value = 'https://www.' + pubName() + '/pages/interactives/sponsor-story/' + s + '/' + $tempH + '/';
 }
 
