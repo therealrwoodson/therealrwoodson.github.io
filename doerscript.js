@@ -34,15 +34,15 @@ function makeItWork() {
   //makeLi();
   makeStyleCode($imgUrl, $socialHead, $socialCopy);
   makeMeta($ssts, $imgUrl, $socialCopy);
-  makeDraftUrl($ssts, $shortHead);
-    makeFinalUrl($ssts, $shortHead);
+  makeDraftPath($ssts, $shortHead);
+    makeDraftUrl($ssts, $shortHead);
   } else {
     
     if (document.pub.isdrafturl.checked) {
-    makeDraftUrl($ssts, $shortHead);
+    makeDraftPath($ssts, $shortHead);
   }
   if (document.pub.isfinalurl.checked) {
-    makeFinalUrl($ssts, $shortHead);
+    makeDraftUrl($ssts, $shortHead);
   }
   if (document.pub.ismeta.checked) {
      makeMeta($ssts, $imgUrl, $socialCopy);
@@ -96,16 +96,16 @@ function amperoctoplus(s) {
 	return s;
 }
 
+function makeDraftPath(s,h) {
+  var $tempH = h.replace(/[&\/\\#!@^;,+()$~%.'"’”“‘:—=*?<>{}]/g, '').replace(/\s/g, '-');
+  
+    document.getElementsByName('draftpathout')[0].value = '/sponsor-story/' + s + '/' + $tempH + '-01/'; 
+}
+
 function makeDraftUrl(s,h) {
   var $tempH = h.replace(/[&\/\\#!@^;,+()$~%.'"’”“‘:—=*?<>{}]/g, '').replace(/\s/g, '-');
   
-    document.getElementsByName('drafturlout')[0].value = '/sponsor-story/' + s + '/' + $tempH + '-01/'; 
-}
-
-function makeFinalUrl(s,h) {
-  var $tempH = h.replace(/[&\/\\#!@^;,+()$~%.'"’”“‘:—=*?<>{}]/g, '').replace(/\s/g, '-');
-  
-  document.getElementsByName('finalurlout')[0].value = 'https://www.' + pubName() + '/pages/interactives/sponsor-story/' + s + '/' + $tempH + '-01/';
+  document.getElementsByName('drafturlout')[0].value = 'https://www.' + pubName() + '/pages/interactives/sponsor-story/' + s + '/' + $tempH + '-01/';
 }
 
 function makeMeta(s,u,d) {
