@@ -8,6 +8,110 @@ var $bitUrl;
 var $imgPath;
 var $socialHead;
 
+
+document.pub.clientname.required = true;
+document.pub.ssts.required = true;
+document.pub.promobrief.required = true;
+document.pub.shorthead.required = true;
+document.pub.socialcopy.required = true;
+document.pub.finalurl.required = true;
+document.pub.biturl.required = true;
+document.pub.imgpath.required = true;
+document.pub.socialhead.required = true;
+
+function depBoxReset() {
+document.pub.clientname.required = true;
+document.pub.ssts.required = true;
+document.pub.promobrief.required = true;
+document.pub.shorthead.required = true;
+document.pub.socialcopy.required = true;
+document.pub.finalurl.required = true;
+document.pub.biturl.required = true;
+document.pub.imgpath.required = true;
+document.pub.socialhead.required = true;
+};
+
+
+function depBox() {
+if (document.pub.isdraftpath.checked) {
+    document.pub.ssts.required = true;
+  document.pub.shorthead.required = true;
+  document.pub.clientname.required = false;
+document.pub.promobrief.required = false;
+document.pub.socialcopy.required = false;
+document.pub.finalurl.required = false;
+document.pub.biturl.required = false;
+document.pub.imgpath.required = false;
+document.pub.socialhead.required = false;
+  }
+  if (document.pub.isdrafturl.checked) {
+    document.pub.ssts.required = true;
+  document.pub.shorthead.required = true;
+  document.pub.clientname.required = false;
+document.pub.promobrief.required = false;
+document.pub.socialcopy.required = false;
+document.pub.finalurl.required = false;
+document.pub.biturl.required = false;
+document.pub.imgpath.required = false;
+document.pub.socialhead.required = false;
+  }
+  if (document.pub.ismeta.checked) {
+     document.pub.ssts.required = true;
+  document.pub.imgpath.required = true;
+    document.pub.socialcopy.required = true;
+      document.pub.clientname.required = false;
+document.pub.promobrief.required = false;
+document.pub.finalurl.required = false;
+document.pub.biturl.required = false;
+document.pub.socialhead.required = false;
+    document.pub.shorthead.required = false;
+  }
+  if (document.pub.isstyle.checked) {
+      document.pub.imgpath.required = true;
+    document.pub.socialhead.required = true;
+    document.pub.socialcopy.required = true;
+          document.pub.clientname.required = false;
+document.pub.promobrief.required = false;
+document.pub.finalurl.required = false;
+document.pub.biturl.required = false;
+    document.pub.shorthead.required = false;
+    document.pub.ssts.required = false;
+  }
+  if (document.pub.isfb.checked) {
+    document.pub.finalurl.required = true;
+    document.pub.imgpath.required = false;
+    document.pub.socialhead.required = false;
+    document.pub.socialcopy.required = false;
+          document.pub.clientname.required = false;
+document.pub.promobrief.required = false;
+document.pub.biturl.required = false;
+    document.pub.shorthead.required = false;
+    document.pub.ssts.required = false;
+  }
+  if (document.pub.istw.checked) {
+    document.pub.socialcopy.required = true;
+    document.pub.biturl.required = true;
+    document.pub.clientname.required = true;
+    document.pub.finalurl.required = false;
+    document.pub.imgpath.required = false;
+    document.pub.socialhead.required = false;
+document.pub.promobrief.required = false;
+    document.pub.shorthead.required = false;
+    document.pub.ssts.required = false;
+  }
+  if (document.pub.ismail.checked) {
+    document.pub.socialhead.required = true;
+    document.pub.socialcopy.required = true;
+    document.pub.biturl.required = true;
+    document.pub.clientname.required = true;
+     document.pub.finalurl.required = false;
+    document.pub.imgpath.required = false;
+document.pub.promobrief.required = false;
+    document.pub.shorthead.required = false;
+    document.pub.ssts.required = false;
+  }
+};
+
 function pubName() {
   var sel = document.getElementById('id_sites');
   var opt = sel.options[sel.selectedIndex];
@@ -38,10 +142,10 @@ function makeItWork() {
     makeDraftUrl($ssts, $shortHead);
   } else {
     
-    if (document.pub.isdrafturl.checked) {
+    if (document.pub.isdraftpath.checked) {
     makeDraftPath($ssts, $shortHead);
   }
-  if (document.pub.isfinalurl.checked) {
+  if (document.pub.isdrafturl.checked) {
     makeDraftUrl($ssts, $shortHead);
   }
   if (document.pub.ismeta.checked) {
