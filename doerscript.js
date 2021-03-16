@@ -27,7 +27,7 @@ function makeItWork() {
   $imgUrl = document.pub.imgpath.value;
   $socialHead = document.pub.socialhead.value;
   
-  if (!document.pub.isdrafturl.checked && !document.pub.isfinalurl.checked && !document.pub.ismeta.checked && !document.pub.isstyle.checked && !document.pub.isfb.checked && !document.pub.istw.checked && !document.pub.ismail.checked) {
+  if (!document.pub.isdraftpath.checked && !document.pub.isdrafturl.checked && !document.pub.ismeta.checked && !document.pub.isstyle.checked && !document.pub.isfb.checked && !document.pub.istw.checked && !document.pub.ismail.checked) {
     makeFb($finalUrl);
   makeTw($socialCopy, $bitUrl, $clientName);
   makeEmail($socialHead, $socialCopy, $bitUrl, $clientName);
