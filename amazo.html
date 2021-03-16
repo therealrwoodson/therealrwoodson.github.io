@@ -13,6 +13,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
+
 <form id="container" name="pub" method="post">
   <div class="tooltip">
     <h2>A.M.A.Z.O.</h2><span class="tooltiptext">Automated Magnificently Amazing Zippy Operator</span></div><h3>Serenity, now</h3>
@@ -51,26 +52,26 @@
 
 <div class="outputs">
   <div id="leftcol">
-<div name="drafturl" class="output">
+<div name="drafturl" class="output"><input type="checkbox" id="isdrafturl" name="isdrafturl" value="isdrafturl">
   Draft URL:<span style="font-weight: 200; font-size:.75em;"> (Internal/External Review)</span>
 <br>
 <textarea name="drafturlout" type="textarea" rows="2" class="outfield"></textarea>
 </div>
   
   <div name="finalurl" class="output">
-Final URL:<span style="font-weight: 200; font-size:.75em;"> (Confirmation/Publishing)</span>
+    <input type="checkbox" id="isfinalurl" name="isfinalurl" value="isfinalurl">Final URL:<span style="font-weight: 200; font-size:.75em;"> (Confirmation/Publishing)</span>
 <br>
 <textarea name="finalurlout" type="textarea" rows="2" class="outfield"></textarea>
 </div>
   
 <div name="socmeta" class="output">
-Meta:<span style="font-weight: 200; font-size:.75em;"> (Static-O-Matic)</span>
+    <input type="checkbox" id="ismeta" name="ismeta" value="ismeta">Meta:<span style="font-weight: 200; font-size:.75em;"> (Static-O-Matic)</span>
 <br>
 <textarea name="metaout" type="textarea" rows="5" class="outfield tall"></textarea>
 </div>
   
 <div name="stylemeta" class="output">
-Extra styles:<span style="font-weight: 200; font-size:.75em;"> (Static-O-Matic)</span>
+    <input type="checkbox" id="isstyle" name="isstyle" value="isstyle">Extra styles:<span style="font-weight: 200; font-size:.75em;"> (Static-O-Matic)</span>
 <br>
 <textarea name="stylemetaout" type="textarea" rows="5" class="outfield tall"></textarea>
 </div>
@@ -78,19 +79,19 @@ Extra styles:<span style="font-weight: 200; font-size:.75em;"> (Static-O-Matic)<
 
   <div id="rightcol">
 <div name="fb" class="output">
-Facebook:<span style="font-weight: 200; font-size:.75em;"> (Ceros share button)</span>
+    <input type="checkbox" id="isfb" name="isfb" value="isfb">Facebook:<span style="font-weight: 200; font-size:.75em;"> (Ceros share button)</span>
 <br>
 <textarea name="fbout" type="textarea" rows="5" class="outfield tall"></textarea>
 </div>
   
 <div name="tw" class="output">
-Twitter:<span style="font-weight: 200; font-size:.75em;"> (Ceros share button)</span>
+    <input type="checkbox" id="istw" name="istw" value="istw">Twitter:<span style="font-weight: 200; font-size:.75em;"> (Ceros share button)</span>
 <br>
 <textarea name="twout" type="textarea" rows="5" class="outfield tall"></textarea>
 </div>
   
 <div name="email" class="output">
-Email:<span style="font-weight: 200; font-size:.75em;"> (Ceros share button)</span>
+    <input type="checkbox" id="ismail" name="ismail" value="ismail">Email:<span style="font-weight: 200; font-size:.75em;"> (Ceros share button)</span>
 <br>
 <textarea name="emailout" type="textarea" rows="5" class="outfield tall"></textarea>
 </div>
@@ -118,6 +119,8 @@ LinkedIn:
   </div>
   
 </form>
+
+
 <!-- partial -->
   <script  src="/doerscript.js"></script>
 
