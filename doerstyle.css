@@ -4,8 +4,9 @@
 }
 
 #container {
-    width: 1053px;
-    margin: 40px auto 0 auto;
+      width: 1053px;
+    margin: 50px auto 100px auto;
+    height: 670px;
 }
 
 #leftcol {
