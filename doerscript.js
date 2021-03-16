@@ -98,13 +98,13 @@ function amperoctoplus(s) {
 }
 
 function makeDraftUrl(s,h) {
-  var $tempH = h.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s/g, '-');
+  var $tempH = h.replace(/[&\/\\#!@^;,+()$~%.'"’”“‘:—=*?<>{}]/g, '').replace(/\s/g, '-');
   
     document.getElementsByName('drafturlout')[0].value = '/sponsor-story/' + s + '/' + $tempH + '-01/'; 
 }
 
 function makeFinalUrl(s,h) {
-  var $tempH = h.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s/g, '-');
+  var $tempH = h.replace(/[&\/\\#!@^;,+()$~%.'"’”“‘:—=*?<>{}]/g, '').replace(/\s/g, '-');
   
   document.getElementsByName('finalurlout')[0].value = 'https://www.' + pubName() + '/pages/interactives/sponsor-story/' + s + '/' + $tempH + '-01/';
 }
