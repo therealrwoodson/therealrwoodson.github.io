@@ -34,45 +34,122 @@ document.pub.socialhead.required = true;
 
 function depBox() {
 if (document.pub.ispubinfo.checked && !document.pub.issocial.checked) {
+	
     document.pub.ssts.required = true;
+	document.pub.ssts.style.display = 'inline-block';
+	
   document.pub.shorthead.required = true;
+  document.pub.shorthead.style.display = 'inline-block';
+  
   document.pub.clientname.required = false;
+   document.pub.clientname.style.display = 'none';
 //document.pub.promobrief.required = false;
 document.pub.socialcopy.required = true;
+document.pub.socialcopy.style.display = 'inline-block';
+
 document.pub.finalurl.required = false;
+document.pub.finalurl.style.display = 'none';
+
 document.pub.biturl.required = false;
+document.pub.biturl.style.display = 'none';
+document.getElementById('bitlylink').style.display = 'none';
+
 document.pub.imgpath.required = true;
+document.pub.imgpath.style.display = 'inline-block';
+document.getElementById('nebulalink').style.display = 'inline-block';
+
 document.pub.socialhead.required = true;
+document.pub.socialhead.style.display = 'inline-block';
+
 } else if (!document.pub.ispubinfo.checked && document.pub.issocial.checked) {
     document.pub.finalurl.required = true;
+	document.pub.finalurl.style.display = 'inline-block';
+	
     document.pub.imgpath.required = false;
+	document.pub.imgpath.style.display = 'none';
+	document.getElementById('nebulalink').style.display = 'none';
+	
     document.pub.socialhead.required = true;
+	document.pub.socialhead.style.display = 'inline-block';
+	
     document.pub.socialcopy.required = true;
-          document.pub.clientname.required = true;
+	document.pub.socialcopy.style.display = 'inline-block';
+	
+    document.pub.clientname.required = true;
+	document.pub.clientname.style.display = 'inline-block';
 //document.pub.promobrief.required = false;
-document.pub.biturl.required = true;
+	document.pub.biturl.required = true;
+	document.pub.biturl.style.display = 'inline-block';
+	document.getElementById('bitlylink').style.display = 'inline-block';
+	
     document.pub.shorthead.required = false;
+	document.pub.shorthead.style.display = 'none';
+	
     document.pub.ssts.required = false;
+	document.pub.ssts.style.display = 'none';
+	
+	document.getElementById('id_sites').style.display = 'none';
+	document.getElementById('id_text').style.display = 'none';
+	
 } else if (!document.pub.ispubinfo.checked && !document.pub.issocial.checked) {
 	document.pub.clientname.required = true;
+	document.pub.clientname.style.display = 'inline-block';
+	
 	document.pub.ssts.required = true;
+	document.pub.ssts.style.display = 'inline-block';
+	
 	//document.pub.promobrief.required = true;
 	document.pub.shorthead.required = true;
+	document.pub.shorthead.style.display = 'inline-block';
+	
 	document.pub.socialcopy.required = true;
+	document.pub.socialcopy.style.display = 'inline-block';
+	
 	document.pub.finalurl.required = true;
+	document.pub.finalurl.style.display = 'inline-block';
+	
 	document.pub.biturl.required = true;
+	document.pub.biturl.style.display = 'inline-block';
+	document.getElementById('bitlylink').style.display = 'inline-block';
+	
 	document.pub.imgpath.required = true;
+	document.pub.imgpath.style.display = 'inline-block';
+	document.getElementById('nebulalink').style.display = 'inline-block';
+	
 	document.pub.socialhead.required = true;
+	
+	document.getElementById('id_sites').style.display = 'inline-block';
+	document.getElementById('id_text').style.display = 'inline-block';
+	
 } else if (document.pub.ispubinfo.checked && document.pub.issocial.checked) {
 	document.pub.clientname.required = true;
+	document.pub.clientname.style.display = 'inline-block';
+	
 	document.pub.ssts.required = true;
+	document.pub.ssts.style.display = 'inline-block';
+	
 	//document.pub.promobrief.required = true;
 	document.pub.shorthead.required = true;
+	document.pub.shorthead.style.display = 'inline-block';
+	
 	document.pub.socialcopy.required = true;
+	document.pub.socialcopy.style.display = 'inline-block';
+	
 	document.pub.finalurl.required = true;
+	document.pub.finalurl.style.display = 'inline-block';
+	
 	document.pub.biturl.required = true;
+	document.pub.biturl.style.display = 'inline-block';
+	document.getElementById('bitlylink').style.display = 'inline-block';
+	
 	document.pub.imgpath.required = true;
+	document.pub.imgpath.style.display = 'inline-block';
+	document.getElementById('nebulalink').style.display = 'inline-block';
+	
 	document.pub.socialhead.required = true;
+	
+	document.getElementById('id_sites').style.display = 'inline-block';
+	document.getElementById('id_text').style.display = 'inline-block';
 }
 };
 
