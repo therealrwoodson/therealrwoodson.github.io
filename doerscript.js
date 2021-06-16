@@ -1,6 +1,6 @@
 var $clientName;
 var $ssts;
-var $promoBrief;
+//var $promoBrief;
 var $shortHead;
 var $socialCopy;
 var $finalUrl;
@@ -11,7 +11,7 @@ var $socialHead;
 
 document.pub.clientname.required = true;
 document.pub.ssts.required = true;
-document.pub.promobrief.required = true;
+//document.pub.promobrief.required = true;
 document.pub.shorthead.required = true;
 document.pub.socialcopy.required = true;
 document.pub.finalurl.required = true;
@@ -22,7 +22,7 @@ document.pub.socialhead.required = true;
 function depBoxReset() {
 document.pub.clientname.required = true;
 document.pub.ssts.required = true;
-document.pub.promobrief.required = true;
+//document.pub.promobrief.required = true;
 document.pub.shorthead.required = true;
 document.pub.socialcopy.required = true;
 document.pub.finalurl.required = true;
@@ -33,83 +33,47 @@ document.pub.socialhead.required = true;
 
 
 function depBox() {
-if (document.pub.isdraftpath.checked) {
+if (document.pub.ispubinfo.checked && !document.pub.issocial.checked) {
     document.pub.ssts.required = true;
   document.pub.shorthead.required = true;
   document.pub.clientname.required = false;
-document.pub.promobrief.required = false;
-document.pub.socialcopy.required = false;
+//document.pub.promobrief.required = false;
+document.pub.socialcopy.required = true;
 document.pub.finalurl.required = false;
 document.pub.biturl.required = false;
-document.pub.imgpath.required = false;
-document.pub.socialhead.required = false;
-  }
-  if (document.pub.isdrafturl.checked) {
-    document.pub.ssts.required = true;
-  document.pub.shorthead.required = true;
-  document.pub.clientname.required = false;
-document.pub.promobrief.required = false;
-document.pub.socialcopy.required = false;
-document.pub.finalurl.required = false;
-document.pub.biturl.required = false;
-document.pub.imgpath.required = false;
-document.pub.socialhead.required = false;
-  }
-  if (document.pub.ismeta.checked) {
-     document.pub.ssts.required = true;
-  document.pub.imgpath.required = true;
-    document.pub.socialcopy.required = true;
-      document.pub.clientname.required = false;
-document.pub.promobrief.required = false;
-document.pub.finalurl.required = false;
-document.pub.biturl.required = false;
-document.pub.socialhead.required = false;
-    document.pub.shorthead.required = false;
-  }
-  if (document.pub.isstyle.checked) {
-      document.pub.imgpath.required = true;
-    document.pub.socialhead.required = true;
-    document.pub.socialcopy.required = true;
-          document.pub.clientname.required = false;
-document.pub.promobrief.required = false;
-document.pub.finalurl.required = false;
-document.pub.biturl.required = false;
-    document.pub.shorthead.required = false;
-    document.pub.ssts.required = false;
-  }
-  if (document.pub.isfb.checked) {
+document.pub.imgpath.required = true;
+document.pub.socialhead.required = true;
+} else if (!document.pub.ispubinfo.checked && document.pub.issocial.checked) {
     document.pub.finalurl.required = true;
     document.pub.imgpath.required = false;
-    document.pub.socialhead.required = false;
-    document.pub.socialcopy.required = false;
-          document.pub.clientname.required = false;
-document.pub.promobrief.required = false;
-document.pub.biturl.required = false;
-    document.pub.shorthead.required = false;
-    document.pub.ssts.required = false;
-  }
-  if (document.pub.istw.checked) {
-    document.pub.socialcopy.required = true;
-    document.pub.biturl.required = true;
-    document.pub.clientname.required = true;
-    document.pub.finalurl.required = false;
-    document.pub.imgpath.required = false;
-    document.pub.socialhead.required = false;
-document.pub.promobrief.required = false;
-    document.pub.shorthead.required = false;
-    document.pub.ssts.required = false;
-  }
-  if (document.pub.ismail.checked) {
     document.pub.socialhead.required = true;
     document.pub.socialcopy.required = true;
-    document.pub.biturl.required = true;
-    document.pub.clientname.required = true;
-     document.pub.finalurl.required = false;
-    document.pub.imgpath.required = false;
-document.pub.promobrief.required = false;
+          document.pub.clientname.required = true;
+//document.pub.promobrief.required = false;
+document.pub.biturl.required = true;
     document.pub.shorthead.required = false;
     document.pub.ssts.required = false;
-  }
+} else if (!document.pub.ispubinfo.checked && !document.pub.issocial.checked) {
+	document.pub.clientname.required = true;
+	document.pub.ssts.required = true;
+	//document.pub.promobrief.required = true;
+	document.pub.shorthead.required = true;
+	document.pub.socialcopy.required = true;
+	document.pub.finalurl.required = true;
+	document.pub.biturl.required = true;
+	document.pub.imgpath.required = true;
+	document.pub.socialhead.required = true;
+} else if (document.pub.ispubinfo.checked && document.pub.issocial.checked) {
+	document.pub.clientname.required = true;
+	document.pub.ssts.required = true;
+	//document.pub.promobrief.required = true;
+	document.pub.shorthead.required = true;
+	document.pub.socialcopy.required = true;
+	document.pub.finalurl.required = true;
+	document.pub.biturl.required = true;
+	document.pub.imgpath.required = true;
+	document.pub.socialhead.required = true;
+}
 };
 
 function pubName() {
@@ -123,7 +87,7 @@ function makeItWork() {
   
   $clientName = document.pub.clientname.value;
   $ssts = document.pub.ssts.value;
-  $promoBrief = document.pub.promobrief.value;
+  //$promoBrief = document.pub.promobrief.value;
   $shortHead = document.pub.shorthead.value;
   $socialCopy = document.pub.socialcopy.value;
   $finalUrl = document.pub.finalurl.value;
@@ -131,7 +95,7 @@ function makeItWork() {
   $imgUrl = document.pub.imgpath.value;
   $socialHead = document.pub.socialhead.value;
   
-  if (!document.pub.isdraftpath.checked && !document.pub.isdrafturl.checked && !document.pub.ismeta.checked && !document.pub.isstyle.checked && !document.pub.isfb.checked && !document.pub.istw.checked && !document.pub.ismail.checked) {
+  if (!document.pub.ispubinfo.checked && !document.pub.issocial.checked) {
     makeFb($finalUrl);
   makeTw($socialCopy, $bitUrl, $clientName);
   makeEmail($socialHead, $socialCopy, $bitUrl, $clientName);
@@ -140,30 +104,26 @@ function makeItWork() {
   makeMeta($ssts, $imgUrl, $socialCopy);
   makeDraftPath($ssts, $shortHead);
     makeDraftUrl($ssts, $shortHead);
-  } else {
-    
-    if (document.pub.isdraftpath.checked) {
+	} else if (document.pub.ispubinfo.checked && document.pub.issocial.checked) {
+	    makeFb($finalUrl);
+	  makeTw($socialCopy, $bitUrl, $clientName);
+	  makeEmail($socialHead, $socialCopy, $bitUrl, $clientName);
+	  //makeLi();
+	  makeStyleCode($imgUrl, $socialHead, $socialCopy);
+	  makeMeta($ssts, $imgUrl, $socialCopy);
+	  makeDraftPath($ssts, $shortHead);
+	    makeDraftUrl($ssts, $shortHead);
+  } else if (document.pub.ispubinfo.checked && !document.pub.issocial.checked) {
     makeDraftPath($ssts, $shortHead);
-  }
-  if (document.pub.isdrafturl.checked) {
-    makeDraftUrl($ssts, $shortHead);
-  }
-  if (document.pub.ismeta.checked) {
-     makeMeta($ssts, $imgUrl, $socialCopy);
-  }
-  if (document.pub.isstyle.checked) {
-    makeStyleCode($imgUrl, $socialHead, $socialCopy);
-  }
-  if (document.pub.isfb.checked) {
+	makeDraftUrl($ssts, $shortHead);
+	makeMeta($ssts, $imgUrl, $socialCopy);
+	makeStyleCode($imgUrl, $socialHead, $socialCopy);
+  } else if (!document.pub.ispubinfo.checked && document.pub.issocial.checked) {
     makeFb($finalUrl);
+	makeTw($socialCopy, $bitUrl, $clientName);
+	makeEmail($socialHead, $socialCopy, $bitUrl, $clientName);
   }
-  if (document.pub.istw.checked) {
-    makeTw($socialCopy, $bitUrl, $clientName);
-  }
-  if (document.pub.ismail.checked) {
-    makeEmail($socialHead, $socialCopy, $bitUrl, $clientName);
-  }
-  };
+ };
 
   
   
@@ -176,7 +136,7 @@ function makeItWork() {
   
  
   
-}
+
 
 function countChar(val) {
         var $charNum = document.getElementById('charNum');
