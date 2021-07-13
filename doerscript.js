@@ -250,7 +250,7 @@ function makeDraftUrl(s,h) {
 }
 
 function makeMeta(s,u,d) {
-	document.getElementsByName('metaout')[0].value = '\{\n"ssts": "sponsor-story/sponsor-story:' + s + '/",\n"og_image": "' + u + '",\n"description": "' + d + '",\n"og_image_width": "400",\n"og_image_height": "210"\n\}'
+	document.getElementsByName('metaout')[0].value = '\{\n"ssts": "sponsor-story/' + s + '/",\n"og_image": "' + u + '",\n"description": "' + d + '",\n"og_image_width": "400",\n"og_image_height": "210"\n\}'
 }
 
 function makeStyleCode(i,s,d) {
